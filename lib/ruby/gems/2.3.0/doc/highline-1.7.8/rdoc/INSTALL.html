@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>INSTALL - HighLine Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Installing+HighLine">Installing HighLine</a>
+    <li><a href="#label-Requirements">Requirements</a>
+    <li><a href="#label-Installing+the+Gem">Installing the Gem</a>
+    <li><a href="#label-Installing+Manually">Installing Manually</a>
+    <li><a href="#label-Installing+HighLine+on+JRuby">Installing HighLine on JRuby</a>
+    <li><a href="#label-Using+termios">Using termios</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Changelog_md.html">Changelog</a>
+  
+    <li><a href="./INSTALL.html">INSTALL</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./TODO.html">TODO</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page INSTALL">
+
+<h1 id="label-Installing+HighLine">Installing <a href="HighLine.html">HighLine</a><span><a href="#label-Installing+HighLine">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>RubyGems is the preferred easy install method for <a
+href="HighLine.html">HighLine</a>.  However, you can install <a
+href="HighLine.html">HighLine</a> manually as described below.</p>
+
+<h2 id="label-Requirements">Requirements<span><a href="#label-Requirements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="HighLine.html">HighLine</a> from version &gt;= 1.7.0 requires ruby
+&gt;= 1.9.3</p>
+
+<h2 id="label-Installing+the+Gem">Installing the Gem<span><a href="#label-Installing+the+Gem">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="HighLine.html">HighLine</a> is intended to be installed via the <a
+href="http://rubyforge.org/projects/rubygems/">RubyGems</a> system.  To get
+the latest version, simply enter the following into your command prompt:</p>
+
+<pre>$ sudo gem install highline</pre>
+
+<p>You must have <a
+href="http://rubyforge.org/projects/rubygems/">RubyGems</a> installed for
+the above to work.</p>
+
+<p>If you want to build the gem locally, make sure you have <a
+href="http://rubyforge.org/projects/rake/">Rake</a> installed then run the
+following command:</p>
+
+<pre>$ rake package</pre>
+
+<h2 id="label-Installing+Manually">Installing Manually<span><a href="#label-Installing+Manually">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Download the latest version of <a href="HighLine.html">HighLine</a> from
+the <a href="http://rubyforge.org/frs/?group_id=683">RubyForge project
+page</a>.  Navigate to the root project directory and enter:</p>
+
+<pre>$ sudo ruby setup.rb</pre>
+
+<h2 id="label-Installing+HighLine+on+JRuby">Installing <a href="HighLine.html">HighLine</a> on JRuby<span><a href="#label-Installing+HighLine+on+JRuby">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>If you are using <a href="HighLine.html">HighLine</a> on JRuby, many
+features will not work properly without a working ncurses installation. 
+First, ensure that you have ncurses installed and then install the
+ffi-ncurses gem.</p>
+
+<p>If ffi-ncurses fails to find your ncurses library, you may need to set the
+RUBY_FFI_NCURSES envirionment variable, i.e:</p>
+
+<pre class="ruby"><span class="ruby-constant">RUBY_FFI_NCURSES_LIB</span>=<span class="ruby-identifier">ncursesw</span> <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">examples</span><span class="ruby-operator">/</span><span class="ruby-identifier">hello</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For details, see the ffi-ncurses documentation at: <a
+href="http://github.com/seanohalpin/ffi-ncurses">github.com/seanohalpin/ffi-ncurses</a></p>
+
+<h2 id="label-Using+termios">Using termios<span><a href="#label-Using+termios">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>While not a requirement, <a href="HighLine.html">HighLine</a> will take
+advantage of the termios library if installed (on Unix).  This slightly
+improves HighLine&#39;s character reading capabilities and thus is
+recommended for all Unix users.</p>
+
+<p>If using the <a href="HighLine.html">HighLine</a> gem, you should be able
+to add termios as easily as:</p>
+
+<pre>$ sudo gem install termios</pre>
+
+<p>For manual installs, consult the termios documentation.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

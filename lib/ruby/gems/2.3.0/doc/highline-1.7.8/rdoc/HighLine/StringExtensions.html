@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module HighLine::StringExtensions - HighLine Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-included">::included</a>
+    
+    <li ><a href="#method-i-color">#color</a>
+    
+    <li ><a href="#method-i-method_missing">#method_missing</a>
+    
+    <li ><a href="#method-i-on">#on</a>
+    
+    <li ><a href="#method-i-on_rgb">#on_rgb</a>
+    
+    <li ><a href="#method-i-rgb">#rgb</a>
+    
+    <li ><a href="#method-i-uncolor">#uncolor</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-HighLine::StringExtensions">
+  <h1 id="module-HighLine::StringExtensions" class="module">
+    module HighLine::StringExtensions
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(base)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-constant">HighLine</span><span class="ruby-operator">::</span><span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">color</span> = <span class="ruby-identifier">color</span>.<span class="ruby-identifier">downcase</span>
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value">&lt;&lt;-END
+      undef :#{color} if method_defined? :#{color}
+      def #{color}
+        color(:#{color})
+      end
+    END</span>
+
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value">&lt;&lt;-END
+      undef :on_#{color} if method_defined? :on_#{color}
+      def on_#{color}
+        on(:#{color})
+      end
+    END</span>
+    <span class="ruby-constant">HighLine</span><span class="ruby-operator">::</span><span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">style</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">style</span> = <span class="ruby-identifier">style</span>.<span class="ruby-identifier">downcase</span>
+      <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value">&lt;&lt;-END
+        undef :#{style} if method_defined? :#{style}
+        def #{style}
+          color(:#{style})
+        end
+      END</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:color</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:color</span>
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:foreground</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:foreground</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">color</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">color</span>(<span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:foreground</span>, <span class="ruby-value">:color</span>
+
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:on</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:on</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">on</span>(<span class="ruby-identifier">arg</span>)
+      <span class="ruby-identifier">color</span>((<span class="ruby-string">&#39;on_&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">to_sym</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:uncolor</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:uncolor</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">uncolor</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">uncolor</span>(<span class="ruby-keyword">self</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:rgb</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:rgb</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">colors</span>)
+      <span class="ruby-identifier">color_code</span> = <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&#39;%02x&#39;</span><span class="ruby-operator">%</span><span class="ruby-identifier">color</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Bad RGB color #{colors.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color_code</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[a-fA-F0-9]{6}/</span>
+      <span class="ruby-identifier">color</span>(<span class="ruby-node">&quot;rgb_#{color_code}&quot;</span>.<span class="ruby-identifier">to_sym</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:on_rgb</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:on_rgb</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_rgb</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">colors</span>)
+      <span class="ruby-identifier">color_code</span> = <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&#39;%02x&#39;</span><span class="ruby-operator">%</span><span class="ruby-identifier">color</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Bad RGB color #{colors.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color_code</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[a-fA-F0-9]{6}/</span>
+      <span class="ruby-identifier">color</span>(<span class="ruby-node">&quot;on_rgb_#{color_code}&quot;</span>.<span class="ruby-identifier">to_sym</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># TODO Chain existing method_missing</span>
+    <span class="ruby-keyword">undef</span> <span class="ruby-value">:method_missing</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:method_missing</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^(on_)?rgb_([0-9a-fA-F]{6})$/</span>
+        <span class="ruby-identifier">color</span>(<span class="ruby-identifier">method</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;undefined method `#{method}&#39; for #&lt;#{self.class}:#{&#39;%#x&#39;%self.object_id}&gt;&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-color" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">color</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="color-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">color</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">color</span>(<span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-method_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_missing</span><span
+            class="method-args">(method, *args, &blk)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_missing-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^(on_)?rgb_([0-9a-fA-F]{6})$/</span>
+    <span class="ruby-identifier">color</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;undefined method `#{method}&#39; for #&lt;#{self.class}:#{&#39;%#x&#39;%self.object_id}&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on</span><span
+            class="method-args">(arg)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-identifier">color</span>((<span class="ruby-string">&#39;on_&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">to_sym</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-on_rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_rgb</span><span
+            class="method-args">(*colors)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_rgb-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_rgb</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">colors</span>)
+  <span class="ruby-identifier">color_code</span> = <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&#39;%02x&#39;</span><span class="ruby-operator">%</span><span class="ruby-identifier">color</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Bad RGB color #{colors.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color_code</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[a-fA-F0-9]{6}/</span>
+  <span class="ruby-identifier">color</span>(<span class="ruby-node">&quot;on_rgb_#{color_code}&quot;</span>.<span class="ruby-identifier">to_sym</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgb</span><span
+            class="method-args">(*colors)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgb-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">colors</span>)
+  <span class="ruby-identifier">color_code</span> = <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&#39;%02x&#39;</span><span class="ruby-operator">%</span><span class="ruby-identifier">color</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Bad RGB color #{colors.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color_code</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[a-fA-F0-9]{6}/</span>
+  <span class="ruby-identifier">color</span>(<span class="ruby-node">&quot;rgb_#{color_code}&quot;</span>.<span class="ruby-identifier">to_sym</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-uncolor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uncolor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="uncolor-source">
+            <pre><span class="ruby-comment"># File lib/highline/string_extensions.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uncolor</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HighLine</span>.<span class="ruby-identifier">uncolor</span>(<span class="ruby-keyword">self</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

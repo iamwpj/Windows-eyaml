@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Changelog - HighLine Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Change+Log">Change Log</a>
+    <li><a href="#label-1.7.8+-2F+2015-10-09">1.7.8 / 2015-10-09</a>
+    <li><a href="#label-1.7.7+-2F+2015-09-22">1.7.7 / 2015-09-22</a>
+    <li><a href="#label-1.7.6+-2F+2015-09-17">1.7.6 / 2015-09-17</a>
+    <li><a href="#label-1.7.5+-2F+2015-09-14">1.7.5 / 2015-09-14</a>
+    <li><a href="#label-1.7.4+-2F+2015-06-16">1.7.4 / 2015-06-16</a>
+    <li><a href="#label-1.7.3+-2F+2015-06-29">1.7.3 / 2015-06-29</a>
+    <li><a href="#label-1.7.2+-2F+2015-04-19">1.7.2 / 2015-04-19</a>
+    <li><a href="#label-Bug+fixes">Bug fixes</a>
+    <li><a href="#label-1.7.1+-2F+2015-02-24">1.7.1 / 2015-02-24</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bug+fixes">Bug fixes</a>
+    <li><a href="#label-1.7.0+-2F+2015-02-18">1.7.0 / 2015-02-18</a>
+    <li><a href="#label-Bug+fixes">Bug fixes</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-1.6.21">1.6.21</a>
+    <li><a href="#label-1.6.20">1.6.20</a>
+    <li><a href="#label-1.6.19">1.6.19</a>
+    <li><a href="#label-1.6.18">1.6.18</a>
+    <li><a href="#label-1.6.17">1.6.17</a>
+    <li><a href="#label-1.6.16">1.6.16</a>
+    <li><a href="#label-1.6.15">1.6.15</a>
+    <li><a href="#label-1.6.14">1.6.14</a>
+    <li><a href="#label-1.6.13">1.6.13</a>
+    <li><a href="#label-1.6.12">1.6.12</a>
+    <li><a href="#label-1.6.11">1.6.11</a>
+    <li><a href="#label-1.6.10">1.6.10</a>
+    <li><a href="#label-1.6.9">1.6.9</a>
+    <li><a href="#label-1.6.8">1.6.8</a>
+    <li><a href="#label-1.6.7">1.6.7</a>
+    <li><a href="#label-1.6.6">1.6.6</a>
+    <li><a href="#label-1.6.5">1.6.5</a>
+    <li><a href="#label-1.6.4">1.6.4</a>
+    <li><a href="#label-1.6.3">1.6.3</a>
+    <li><a href="#label-1.6.2">1.6.2</a>
+    <li><a href="#label-1.6.1">1.6.1</a>
+    <li><a href="#label-1.5.2">1.5.2</a>
+    <li><a href="#label-1.5.1">1.5.1</a>
+    <li><a href="#label-1.5.0">1.5.0</a>
+    <li><a href="#label-1.4.0">1.4.0</a>
+    <li><a href="#label-1.2.9">1.2.9</a>
+    <li><a href="#label-1.2.8">1.2.8</a>
+    <li><a href="#label-1.2.7">1.2.7</a>
+    <li><a href="#label-1.2.6">1.2.6</a>
+    <li><a href="#label-1.2.5">1.2.5</a>
+    <li><a href="#label-1.2.4">1.2.4</a>
+    <li><a href="#label-1.2.3">1.2.3</a>
+    <li><a href="#label-1.2.2">1.2.2</a>
+    <li><a href="#label-1.2.1">1.2.1</a>
+    <li><a href="#label-1.2.0">1.2.0</a>
+    <li><a href="#label-1.0.4">1.0.4</a>
+    <li><a href="#label-1.0.2">1.0.2</a>
+    <li><a href="#label-1.0.1">1.0.1</a>
+    <li><a href="#label-1.0.0">1.0.0</a>
+    <li><a href="#label-0.6.1">0.6.1</a>
+    <li><a href="#label-0.6.0">0.6.0</a>
+    <li><a href="#label-0.5.0">0.5.0</a>
+    <li><a href="#label-0.4.0">0.4.0</a>
+    <li><a href="#label-0.3.0">0.3.0</a>
+    <li><a href="#label-0.2.0">0.2.0</a>
+    <li><a href="#label-0.1.0">0.1.0</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Changelog_md.html">Changelog</a>
+  
+    <li><a href="./INSTALL.html">INSTALL</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./TODO.html">TODO</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Changelog.md">
+
+<h2 id="label-Change+Log">Change Log<span><a href="#label-Change+Log">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Below is a complete listing of changes for each revision of <a
+href="HighLine.html">HighLine</a>.</p>
+
+<h3 id="label-1.7.8+-2F+2015-10-09">1.7.8 / 2015-10-09<span><a href="#label-1.7.8+-2F+2015-10-09">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix some issues when paginating. (Nick Carboni (@carbonin) and Abinoam P.
+Marques Jr. (@abinoam), #168, PRs #169 #170)</p>
+</li></ul>
+
+<h3 id="label-1.7.7+-2F+2015-09-22">1.7.7 / 2015-09-22<span><a href="#label-1.7.7+-2F+2015-09-22">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Make <a href="HighLine/Question.html">HighLine::Question</a> coerce its
+question argument into a <a href="String.html">String</a>. (@97-109-107 and
+Abinoam P. Marques Jr. (@abinoam), #159, PR #160)</p>
+</li></ul>
+
+<h3 id="label-1.7.6+-2F+2015-09-17">1.7.6 / 2015-09-17<span><a href="#label-1.7.6+-2F+2015-09-17">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix a typo in a var name affecting solaris. (Danek Duvall (@dhduvall) and
+Abinoam P. Marques Jr. (@abinoam), #155, PR #156)</p>
+</li></ul>
+
+<h3 id="label-1.7.5+-2F+2015-09-14">1.7.5 / 2015-09-14<span><a href="#label-1.7.5+-2F+2015-09-14">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Support jruby9k for system extensions (Michael (@mmmries), PR #153)</p>
+</li></ul>
+
+<h3 id="label-1.7.4+-2F+2015-06-16">1.7.4 / 2015-06-16<span><a href="#label-1.7.4+-2F+2015-06-16">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Workaround on #55 for stty</p>
+</li></ul>
+
+<h3 id="label-1.7.3+-2F+2015-06-29">1.7.3 / 2015-06-29<span><a href="#label-1.7.3+-2F+2015-06-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add HighLine::Simulator tests (Bala Paranj (@bparanj) and Abinoam Marques
+Jr. (@abinoam), #142, PR #143)</p>
+</li></ul>
+
+<h3 id="label-1.7.2+-2F+2015-04-19">1.7.2 / 2015-04-19<span><a href="#label-1.7.2+-2F+2015-04-19">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Bug+fixes">Bug fixes<span><a href="#label-Bug+fixes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>Fix #138 (a regression of #131). PR #139.</p>
+</li></ul>
+
+<h3 id="label-1.7.1+-2F+2015-02-24">1.7.1 / 2015-02-24<span><a href="#label-1.7.1+-2F+2015-02-24">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>Add travis CI configuration (Eli Young (@elyscape), #130)</p>
+</li><li>
+<p>Add Rubinius to Build Matrix with Allowed Failure (Brandon Fish (bjfish),
+#132)</p>
+</li><li>
+<p>Make some adjustments on tests (Abinoam Marques Jr., #133, #134)</p>
+</li><li>
+<p>Drop support for Ruby 1.8 (Abinoam Marques Jr., #134)</p>
+</li></ul>
+
+<h4 id="label-Bug+fixes">Bug fixes<span><a href="#label-Bug+fixes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>Fix IO.console.winsize returning reversed column and line values (Fission
+Xuiptz (@fissionxuiptz)), #131)</p>
+</li></ul>
+
+<h3 id="label-1.7.0+-2F+2015-02-18">1.7.0 / 2015-02-18<span><a href="#label-1.7.0+-2F+2015-02-18">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Bug+fixes">Bug fixes<span><a href="#label-Bug+fixes">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>Fix correct encoding of statements to output encoding (Dāvis (davispuh),
+#110)</p>
+</li><li>
+<p>Fix character echoing when echo is false and multibyte character is typed
+(Abinoam Marques Jr., #117 #118)</p>
+</li><li>
+<p>Fix backspace support on Cyrillic (Abinoam Marques Jr., #115 #118)</p>
+</li><li>
+<p>Fix returning wrong encoding when echo is false (Abinoam Marques Jr., #116
+#118)</p>
+</li><li>
+<p>Fix Question limit and realine incompatibilities (Abinoam Marques Jr. #113
+#120)</p>
+</li><li>
+<p>Fix/improve string coercion on say (Abinoam Marques Jr., #98 #122)</p>
+</li><li>
+<p>Fix terminal_size returning nil in some terminals (Abinoam Marques Jr., #85
+#123)</p>
+</li></ul>
+
+<h4 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>Improve format_statement <a href="String.html">String</a> coercion (Michael
+Bishop (michaeljbishop), #104)</p>
+</li><li>
+<p>Update homepage url on gemspec (Rubyforge-&gt;GitHub) (Edward Anderson
+(nilbus), #107)</p>
+</li><li>
+<p>Update COPYING file (Vít Ondruch (voxik), #109)</p>
+</li><li>
+<p>Improve multi-byte encoding support (Abinoam Marques Jr., #115 #116 #117
+#118)</p>
+</li><li>
+<p>Make :grey -&gt; :gray and :light -&gt; :bright aliases (Abinoam Marques
+Jr., #114 #119)</p>
+</li><li>
+<p>Return the default object (as it is) when no answer given (Abinoam Marques
+Jr., #112 #121)</p>
+</li><li>
+<p>Added test for Yaml serialization of HighLine::String (Abinoam Marques Jr.,
+#69 #124)</p>
+</li><li>
+<p>Make improvements on <a href="Changelog_md.html">Changelog</a> and Rakefile
+(Abinoam Marques Jr., #126 #127 #128)</p>
+</li></ul>
+
+<h3 id="label-1.6.21">1.6.21<span><a href="#label-1.6.21">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Improved Windows integration (by Ronie Henrich).</p>
+</li><li>
+<p>Clarified menu choice error messages (by Keith Bennett).</p>
+</li></ul>
+
+<h3 id="label-1.6.20">1.6.20<span><a href="#label-1.6.20">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a bug with FFI::NCurses integration (by agentdave).</p>
+</li><li>
+<p>Improved StringExtensions performance (by John Leach).</p>
+</li><li>
+<p>Various JRuby fixes (by presidentbeef).</p>
+</li></ul>
+
+<h3 id="label-1.6.19">1.6.19<span><a href="#label-1.6.19">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed <code>terminal_size()</code> with jline2 (by presidentbeef).</p>
+</li></ul>
+
+<h3 id="label-1.6.18">1.6.18<span><a href="#label-1.6.18">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a long supported interface that was accidentally broken with a recent
+change (by Rubem Nakamura Carneiro).</p>
+</li></ul>
+
+<h3 id="label-1.6.17">1.6.17<span><a href="#label-1.6.17">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added encoding support to menus (by David Lyons).</p>
+</li><li>
+<p>Some minor fixes to SystemExtensions (by whiteleaf and presidentbeef).</p>
+</li></ul>
+
+<h3 id="label-1.6.16">1.6.16<span><a href="#label-1.6.16">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added the new indention feature (by davispuh).</p>
+</li><li>
+<p>Separated auto-completion from the answer type (by davispuh).</p>
+</li><li>
+<p>Improved JRuby support (by rsutphin).</p>
+</li><li>
+<p>General code clean up (by stomar).</p>
+</li><li>
+<p>Made <a href="HighLine.html#method-i-say">HighLine#say</a> a little smarter
+with regard to color escapes (by Kenneth Murphy).</p>
+</li></ul>
+
+<h3 id="label-1.6.15">1.6.15<span><a href="#label-1.6.15">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for nil arguments in lists (by Eric Saxby).</p>
+</li><li>
+<p>Fixed HighLine&#39;s termios integration (by Jens Wille).</p>
+</li></ul>
+
+<h3 id="label-1.6.14">1.6.14<span><a href="#label-1.6.14">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added JRuby 1.7 support (by Mina Nagy).</p>
+</li><li>
+<p>Take into account color escape sequences when wrapping text (by Mark J. 
+Titorenko).</p>
+</li></ul>
+
+<h3 id="label-1.6.13">1.6.13<span><a href="#label-1.6.13">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Removed unneeded Shebang lines (by Scott Gonyea).</p>
+</li><li>
+<p>Protect the <a href="String.html">String</a> passed to Question.new from
+modification (by michael).</p>
+</li><li>
+<p>Added a retype-to-verify setting (by michael).</p>
+</li></ul>
+
+<h3 id="label-1.6.12">1.6.12<span><a href="#label-1.6.12">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Silenced warnings (by James McEwan).</p>
+</li></ul>
+
+<h3 id="label-1.6.11">1.6.11<span><a href="#label-1.6.11">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a bad test. (Fix by Diego Elio Pettenò.)</p>
+</li></ul>
+
+<h3 id="label-1.6.10">1.6.10<span><a href="#label-1.6.10">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a regression that prevented asking for <a
+href="String.html">String</a> arguments (by Jeffery  Sman.)</p>
+</li><li>
+<p>Fixed a testing incompatibility (by Hans de Graaff.)</p>
+</li></ul>
+
+<h3 id="label-1.6.9">1.6.9<span><a href="#label-1.6.9">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The new list modes now properly ignore escapes when sizing.</p>
+</li><li>
+<p>Added a project gemspec file.</p>
+</li><li>
+<p>Fixed a bug that prevented the use of termios (by tomdz).</p>
+</li><li>
+<p>Switch to JLine to provide better echo support on JRuby (by tomdz).</p>
+</li></ul>
+
+<h3 id="label-1.6.8">1.6.8<span><a href="#label-1.6.8">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix missing <code>ERASE_CHAR</code> reference (by Aaron Gifford).</p>
+</li></ul>
+
+<h3 id="label-1.6.7">1.6.7<span><a href="#label-1.6.7">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed bug introduced in 1.6.6 attempted fix (by Aaron Gifford).</p>
+</li></ul>
+
+<h3 id="label-1.6.6">1.6.6<span><a href="#label-1.6.6">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed old style references causing <code>HighLine::String</code> errors (by
+Aaron Gifford).</p>
+</li></ul>
+
+<h3 id="label-1.6.5">1.6.5<span><a href="#label-1.6.5">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="HighLine.html#method-i-list">HighLine#list</a> now correctly
+handles empty lists (fix by Lachlan Dowding).</p>
+</li><li>
+<p><a href="HighLine.html#method-i-list">HighLine#list</a> now supports
+<code>:uneven_columns_across</code> and  <code>:uneven_columns_down</code>
+modes.</p>
+</li></ul>
+
+<h3 id="label-1.6.4">1.6.4<span><a href="#label-1.6.4">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add introspection methods to color_scheme: definition, keys, to_hash.</p>
+</li><li>
+<p>Add tests for new methods.</p>
+</li></ul>
+
+<h3 id="label-1.6.3">1.6.3<span><a href="#label-1.6.3">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add color NONE.</p>
+</li><li>
+<p>Add RGB color capability.</p>
+</li><li>
+<p>Made &#39;color&#39; available as a class or instance method of <a
+href="HighLine.html">HighLine</a>, for  instance: <a
+href="HighLine.html#method-c-color">HighLine.color</a>(“foo”, :blue)) or
+highline_obj.color(“foo”, :blue)  are now both possible and equivalent.</p>
+</li><li>
+<p>Add HighLine::String class with convenience methods: color (alias 
+foreground), on (alias background), colors, and styles. See 
+lib/string_extensions.rb.</p>
+</li><li>
+<p>Add (optional) ability to extend <a href="String.html">String</a> with the
+same convenience methods from  HighLine::String, using
+Highline.colorize_strings.</p>
+</li></ul>
+
+<h3 id="label-1.6.2">1.6.2<span><a href="#label-1.6.2">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Correctly handle STDIN being closed before we receive any data (fix by 
+mleinart).</p>
+</li><li>
+<p>Try if msvcrt, if we can&#39;t load crtdll on Windows (fix by pepijnve).</p>
+</li><li>
+<p>A fix for nil_on_handled not running the action (reported by Andrew Davey).</p>
+</li></ul>
+
+<h3 id="label-1.6.1">1.6.1<span><a href="#label-1.6.1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed raw_no_echo_mode so that it uses stty -icanon rather than cbreak  as
+cbreak does not appear to be the posixly correct argument. It fails  on
+Solaris if cbreak is used.</p>
+</li><li>
+<p>Fixed an issue that kept Menu from showing the correct choices for 
+disambiguation.</p>
+</li><li>
+<p>Removed a circular require that kept Ruby 1.9.2 from loading <a
+href="HighLine.html">HighLine</a>.</p>
+</li><li>
+<p>Fixed a bug that caused infinite looping when wrapping text without spaces.</p>
+</li><li>
+<p>Fixed it so that :auto paging accounts for the two lines it adds.</p>
+</li><li>
+<p>On JRuby, improved error message about ffi-ncurses. Before 1.5.3,  <a
+href="HighLine.html">HighLine</a> was silently swallowing error messages
+when ffi-ncurses gem  was installed without ncurses present on the system.</p>
+</li><li>
+<p>Reverted Aaron Simmons&#39;s patch to allow redirecting STDIN on Windows.
+This  is the only way we could find to restore HighLine&#39;s character
+reading to  working order.</p>
+</li></ul>
+
+<h3 id="label-1.5.2">1.5.2<span><a href="#label-1.5.2">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for using the ffi-ncurses gem which is supported in JRuby.</p>
+</li><li>
+<p>Added gem build instructions.</p>
+</li></ul>
+
+<h3 id="label-1.5.1">1.5.1<span><a href="#label-1.5.1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed the long standing echo true bug.  (reported by Lauri Tuominen)</p>
+</li><li>
+<p>Improved Windows API calls to support the redirection of STDIN.  (patch by
+Aaron Simmons)</p>
+</li><li>
+<p>Updated gem specification to avoid a deprecated call.</p>
+</li><li>
+<p>Made a minor documentation clarification about character mode support.</p>
+</li><li>
+<p>Worked around some API changes in Ruby&#39;s standard library in Ruby 1.9. 
+(patch by Jake Benilov)</p>
+</li></ul>
+
+<h3 id="label-1.5.0">1.5.0<span><a href="#label-1.5.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a bug that would prevent Readline from showing all completions. 
+(reported by Yaohan Chen)</p>
+</li><li>
+<p>Added the ability to pass a block to <a
+href="HighLine.html#method-i-agree">HighLine#agree</a>.  (patch by Yaohan
+Chen)</p>
+</li></ul>
+
+<h3 id="label-1.4.0">1.4.0<span><a href="#label-1.4.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Made the code grabbing terminal size a little more cross-platform by 
+adding support for Solaris. (patch by Ronald Braswell and Coey Minear)</p>
+</li></ul>
+
+<h3 id="label-1.2.9">1.2.9<span><a href="#label-1.2.9">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Additional work on the backspacing issue. (patch by Jeremy Hinegardner)</p>
+</li><li>
+<p>Fixed Readline prompt bug. (patch by Jeremy Hinegardner)</p>
+</li></ul>
+
+<h3 id="label-1.2.8">1.2.8<span><a href="#label-1.2.8">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed backspacing past the prompt and interrupting a prompt bugs.  (patch
+by Jeremy Hinegardner)</p>
+</li></ul>
+
+<h3 id="label-1.2.7">1.2.7<span><a href="#label-1.2.7">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed the stty indent bug.</p>
+</li><li>
+<p>Fixed the echo backspace bug.</p>
+</li><li>
+<p>Added <a href="HighLine.html#method-c-track_eof-3D">HighLine.track_eof=</a>
+setting to work are threaded eof?() calls.</p>
+</li></ul>
+
+<h3 id="label-1.2.6">1.2.6<span><a href="#label-1.2.6">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Patch by Jeremy Hinegardner:</p>
+<ul><li>
+<p>Added ColorScheme support.</p>
+</li><li>
+<p>Added <a
+href="HighLine/Question.html#attribute-i-overwrite">HighLine::Question#overwrite</a>
+mode.</p>
+</li><li>
+<p>Various documentation fixes.</p>
+</li></ul>
+
+<h3 id="label-1.2.5">1.2.5<span><a href="#label-1.2.5">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Really fixed the bug I tried to fix in 1.2.4.</p>
+</li></ul>
+
+<h3 id="label-1.2.4">1.2.4<span><a href="#label-1.2.4">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed a crash causing bug when using menus, reported by Patrick Hof.</p>
+</li></ul>
+
+<h3 id="label-1.2.3">1.2.3<span><a href="#label-1.2.3">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Treat Cygwin like a Posix OS, instead of a native Windows environment.</p>
+</li></ul>
+
+<h3 id="label-1.2.2">1.2.2<span><a href="#label-1.2.2">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Minor documentation corrections.</p>
+</li><li>
+<p>Applied Thomas Werschleiln&#39;s patch to fix termio buffering on Solaris.</p>
+</li><li>
+<p>Applied Justin Bailey&#39;s patch to allow canceling paged output.</p>
+</li><li>
+<p>Fixed a documentation bug in the description of character case settings.</p>
+</li><li>
+<p>Added a notice about termios in <a
+href="HighLine/Question.html#attribute-i-echo">HighLine::Question#echo</a>.</p>
+</li><li>
+<p>Finally working around the infamous “fast typing” bug</p>
+</li></ul>
+
+<h3 id="label-1.2.1">1.2.1<span><a href="#label-1.2.1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Applied Justin Bailey&#39;s fix for the page_print() infinite loop bug.</p>
+</li><li>
+<p>Made a SystemExtensions module to expose OS level functionality other 
+libraries may want to access.</p>
+</li><li>
+<p>Publicly exposed the get_character() method, per user requests.</p>
+</li><li>
+<p>Added terminal_size(), output_cols(), and output_rows() methods.</p>
+</li><li>
+<p>Added :auto setting for warp_at=() and page_at=().</p>
+</li></ul>
+
+<h3 id="label-1.2.0">1.2.0<span><a href="#label-1.2.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Improved RubyForge and gem spec project descriptions.</p>
+</li><li>
+<p>Added basic examples to <a href="README_rdoc.html">README</a>.</p>
+</li><li>
+<p>Added a VERSION constant.</p>
+</li><li>
+<p>Added support for hidden menu commands.</p>
+</li><li>
+<p>Added <a href="Object.html#method-i-or_ask">Object#or_ask</a> when using
+highline/import.</p>
+</li></ul>
+
+<h3 id="label-1.0.4">1.0.4<span><a href="#label-1.0.4">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Moved the <a href="HighLine.html">HighLine</a> project to Subversion.</p>
+</li><li>
+<p>HighLine&#39;s color escapes can now be disabled.</p>
+</li><li>
+<p>Fixed EOF bug introduced in the last release.</p>
+</li><li>
+<p>Updated <a href="HighLine.html">HighLine</a> web page.</p>
+</li><li>
+<p>Moved to a forked development/stable version numbering.</p>
+</li></ul>
+
+<h3 id="label-1.0.2">1.0.2<span><a href="#label-1.0.2">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Removed old and broken help tests.</p>
+</li><li>
+<p>Fixed test case typo found by David A. Black.</p>
+</li><li>
+<p>Added ERb escapes processing to lists, for coloring list items. Color
+escapes  do not add to list element size.</p>
+</li><li>
+<p><a href="HighLine.html">HighLine</a> now throws EOFError when input is
+exhausted.</p>
+</li></ul>
+
+<h3 id="label-1.0.1">1.0.1<span><a href="#label-1.0.1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Minor bug fix: Moved help initialization to before response building, so
+help  would show up in the default responses.</p>
+</li></ul>
+
+<h3 id="label-1.0.0">1.0.0<span><a href="#label-1.0.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fixed documentation typo pointed out by Gavin Kistner.</p>
+</li><li>
+<p>Added <code>gather = ...</code> option to question for fetching entire
+Arrays or  Hashes filled with answers. You can set <code>gather</code> to a
+count of answers to  collect, a <a href="String.html">String</a> or Regexp
+matching the end of input, or a Hash where each  key can be used in a new
+question.</p>
+</li><li>
+<p>Added File support to <a
+href="HighLine.html#method-i-ask">HighLine#ask</a>. You can specify a
+<em>directory</em> and a  <em>glob</em> pattern that combine into a list of
+file choices the user can select  from. You can choose to receive the
+user&#39;s answer as an open filehandle or as  a Pathname object.</p>
+</li><li>
+<p>Added Readline support for history and editing.</p>
+</li><li>
+<p>Added tab completion for menu and file selection selection (requires 
+Readline).</p>
+</li><li>
+<p>Added an optional character limit for input.</p>
+</li><li>
+<p>Added a complete help system to HighLine&#39;s shell menu creation tools.</p>
+</li></ul>
+
+<h3 id="label-0.6.1">0.6.1<span><a href="#label-0.6.1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Removed termios dependancy in gem, to fix Windows&#39; install.</p>
+</li></ul>
+
+<h3 id="label-0.6.0">0.6.0<span><a href="#label-0.6.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Implemented <a href="HighLine.html#method-i-choose">HighLine#choose</a> for
+menu handling.</p>
+</li><li>
+<p>Provided shortcut <code>choose(item1, item2, ...)</code> for simple menus.</p>
+</li><li>
+<p>Allowed Ruby code to be attached to each menu item, to create a complete
+menu solution.</p>
+</li><li>
+<p>Provided for total customization of the menu layout.</p>
+</li><li>
+<p>Allowed for menu selection by index, name or both.</p>
+</li><li>
+<p>Added a <em>shell</em> mode to allow menu selection with additional details
+following the name.</p>
+</li><li>
+<p>Added a list() utility method that can be invoked just like color(). It can
+layout Arrays for you in any output in the modes
+<code>:columns_across</code>,  <code>:columns_down</code>,
+<code>:inline</code> and <code>:rows</code></p>
+</li><li>
+<p>Added support for <code>echo = &quot;*&quot;</code> style settings. User
+code can now  choose the echo character this way.</p>
+</li><li>
+<p>Modified <a href="HighLine.html">HighLine</a> to user the “termios” library
+for character input, if  available. Will return to old behavior (using
+“stty”), if “termios” cannot be  loaded.</p>
+</li><li>
+<p>Improved “stty” state restoring code.</p>
+</li><li>
+<p>Fixed “stty” code to handle interrupt signals.</p>
+</li><li>
+<p>Improved the default auto-complete error message and exposed this message 
+through the <code>responses</code> interface as
+<code>:no_completion</code>.</p>
+</li></ul>
+
+<h3 id="label-0.5.0">0.5.0<span><a href="#label-0.5.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Implemented <code>echo = false</code> for <a
+href="HighLine/Question.html">HighLine::Question</a> objects, primarily to 
+make fetching passwords trivial.</p>
+</li><li>
+<p>Fixed an auto-complete bug that could cause a crash when the user gave an 
+answer that didn&#39;t complete to any valid choice.</p>
+</li><li>
+<p>Implemented <code>case</code> for <a
+href="HighLine/Question.html">HighLine::Question</a> objects to provide
+character case  conversions on given answers. Can be set to
+<code>:up</code>, <code>:down</code>, or  <code>:capitalize</code>.</p>
+</li><li>
+<p>Exposed <code>@answer</code> to the response system, to allow response that
+are  aware of incorrect input.</p>
+</li><li>
+<p>Implemented <code>confirm</code> for <a
+href="HighLine/Question.html">HighLine::Question</a> objects to allow for
+verification  for sensitive user choices. If set to <code>true</code>, user
+will have to answer an  “Are you sure? ” question. Can also be set to the
+question to confirm with  the user.</p>
+</li></ul>
+
+<h3 id="label-0.4.0">0.4.0<span><a href="#label-0.4.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added <code>@wrap_at</code> and <code>@page_at</code> settings and
+accessors to  <a href="HighLine.html">HighLine</a>, to control text flow.</p>
+</li><li>
+<p>Implemented line wrapping with adjustable limit.</p>
+</li><li>
+<p>Implemented paged printing with adjustable limit.</p>
+</li></ul>
+
+<h3 id="label-0.3.0">0.3.0<span><a href="#label-0.3.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added support for installing with setup.rb.</p>
+</li><li>
+<p>All output is now treated as an ERb sequence, allowing Ruby code to be 
+embedded in output strings.</p>
+</li><li>
+<p>Added support for ANSI color sequences in say(). (And everything else  by
+extension.)</p>
+</li><li>
+<p>Added whitespace handling for answers. Can be set to <code>:strip</code>, 
+<code>:chomp</code>, <code>:collapse</code>,
+<code>:strip_and_collapse</code>,  <code>:chomp_and_collapse</code>,
+<code>:remove</code>, or <code>:none</code>.</p>
+</li><li>
+<p>Exposed question details to ERb completion through @question, to allow for 
+intelligent responses.</p>
+</li><li>
+<p>Simplified <a href="HighLine.html">HighLine</a> internals using @question.</p>
+</li><li>
+<p>Added support for fetching single character input either with getc() or 
+HighLine&#39;s own cross-platform terminal input routine.</p>
+</li><li>
+<p>Improved type conversion to handle user defined classes.</p>
+</li></ul>
+
+<h3 id="label-0.2.0">0.2.0<span><a href="#label-0.2.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Added Unit Tests to cover an already fixed output bug in the future.</p>
+</li><li>
+<p>Added Rakefile and setup test action (default).</p>
+</li><li>
+<p>Renamed HighLine::Answer to <a
+href="HighLine/Question.html">HighLine::Question</a> to better illustrate
+its role.</p>
+</li><li>
+<p>Renamed fetch_line() to get_response() to better define its goal.</p>
+</li><li>
+<p>Simplified explain_error in terms of the Question object.</p>
+</li><li>
+<p>Renamed accept?() to in_range?() to better define purpose.</p>
+</li><li>
+<p>Reworked valid?() into valid_answer?() to better fit Question object.</p>
+</li><li>
+<p>Reworked <code>@member</code> into <code>@in</code>, to make it easier to
+remember and  switched implementation to include?().</p>
+</li><li>
+<p>Added range checks for @above and @below.</p>
+</li><li>
+<p>Fixed the bug causing ask() to swallow NoMethodErrors.</p>
+</li><li>
+<p>Rolled ask_on_error() into responses.</p>
+</li><li>
+<p>Redirected imports to <a href="Kernel.html">Kernel</a> from <a
+href="Object.html">Object</a>.</p>
+</li><li>
+<p>Added support for <code>validate = lambda { ... }</code>.</p>
+</li><li>
+<p>Added default answer support.</p>
+</li><li>
+<p>Fixed bug that caused ask() to die with an empty question.</p>
+</li><li>
+<p>Added complete documentation.</p>
+</li><li>
+<p>Improve the implemetation of agree() to be the intended “yes” or “no” only 
+question.</p>
+</li><li>
+<p>Added Rake tasks for documentation and packaging.</p>
+</li><li>
+<p>Moved project to RubyForge.</p>
+</li></ul>
+
+<h3 id="label-0.1.0">0.1.0<span><a href="#label-0.1.0">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Initial release as the solution to  <a
+href="http://www.rubyquiz.com/quiz29.html">Ruby Quiz #29</a>.</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
