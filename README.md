@@ -2,7 +2,7 @@
 *hiera-eyaml for Windows*
 
 ## To Install:
-1. Download the zip file. Extract the contents to a folder on your C:. I do *Windows-eyaml* because it's easy.
+1. Download the zip file. Extract the contents to a folder on your C:. I do `Windows-eyaml` because it's easy.
 2. Run the following command to set the environmental variables for Windows Powershell and Command Line. `setx Path C:\Windows-eyaml\bin` - *set the C: path to the extraction location!*
 3. Generate or add keys to the `\keys` directory. 
 
